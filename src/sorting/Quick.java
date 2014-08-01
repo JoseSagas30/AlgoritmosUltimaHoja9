@@ -12,58 +12,70 @@ package sorting;
  */
 public class Quick {
 
-    private int array[];
-    private int length;
+    private Comparable array[];
+    private int tamaño;
  
-    public void sort(int[] inputArr) {
+    public void quickSort(Comparable[] inputArr) {
          
+        //si existe algun error en la lista a ordenar o no tiene datos
         if (inputArr == null || inputArr.length == 0) {
             return;
         }
+        
+        //instanciacion de atributos
         this.array = inputArr;
-        length = inputArr.length;
-        quickSort(0, length - 1);
+        tamaño = inputArr.length;
+        
+        //ordenamiento de lista
+        quickSorting(0, tamaño - 1);
+        
+        
+        System.out.println("El resultado ordenado (Quick) es");
+                for (int x = 0; x < inputArr.length-1; x++){
+                    System.out.println(inputArr[x]);
+                }
+        
     }
  
-    private void quickSort(int lowerIndex, int higherIndex) {
+    private void quickSorting(int indicarodMenor, int indicarodMayor) {
          
-        int i = lowerIndex;
-        int j = higherIndex;
-        // calculate pivot number, I am taking pivot as middle index number
-        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
-        // Divide into two arrays
+        
+        int i = indicarodMenor;
+        int j = indicarodMayor;
+        // se obtiene el numero central
+        int central = (Integer)array[indicarodMenor+(indicarodMayor-indicarodMenor)/2];
+        // Divicion en dos arrays
         while (i <= j) {
-            /**
-             * In each iteration, we will identify a number from left side which 
-             * is greater then the pivot value, and also we will identify a number 
-             * from right side which is less then the pivot value. Once the search 
-             * is done, then we exchange both numbers.
-             */
-            while (array[i] < pivot) {
+
+            //Si dato central es mayor al dato actual en i pasa al siguente
+            while ((Integer)array[i] < central) {
                 i++;
             }
-            while (array[j] > pivot) {
+            
+            //Si dato central es menor al dato actual en j pasa al anterior
+            while ((Integer)array[j] > central) {
                 j--;
             }
+            
+            //Si el dato indicadorMenor es menor al indicadorMayor
             if (i <= j) {
-                exchangeNumbers(i, j);
-                //move index to next position on both sides
+                //intercambia los datos
+                int temporal = (Integer)(array[i]);
+                array[i] = array[j];
+                array[j] = temporal;
+                //los mueve a la siguiente posicion segun su extremo
                 i++;
                 j--;
             }
         }
-        // call quickSort() method recursively
-        if (lowerIndex < j)
-            quickSort(lowerIndex, j);
-        if (i < higherIndex)
-            quickSort(i, higherIndex);
+        
+        // llamado del quickSorting recurrentemente
+        if (indicarodMenor < j)
+            quickSorting(indicarodMenor, j);
+        if (i < indicarodMayor)
+            quickSorting(i, indicarodMayor);
     }
  
-    private void exchangeNumbers(int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
 } 
 
 

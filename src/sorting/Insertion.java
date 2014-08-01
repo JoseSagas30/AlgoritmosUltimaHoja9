@@ -6,7 +6,6 @@
 * Ordenamiento de números que utiliza datos del archivo de texto generado*/
 
 //package sorting;
-
 public class Insertion {
 
 

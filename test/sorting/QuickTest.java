@@ -27,10 +27,10 @@ public class QuickTest {
     @Test
     public void testQuickSort() {
         System.out.println("QUICK SORT");
-        Merge instance = new Merge();
+        Quick instance = new Quick();
         Integer [] ingresado = {4500,2000,3400,9000};
         Comparable[] inputArr = ingresado;
-        instance.mergeSort(inputArr);
+        instance.quickSort(inputArr);
         Integer [] esperado = {2000,3400,4500,9000};  
         //Si ambas cadenas son iguales, la prueba será exitosa
         assertArrayEquals(ingresado,esperado);

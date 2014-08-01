@@ -26,10 +26,10 @@ public class BubbleTest {
     @Test
     public void testBubbleSort() {
         System.out.println("BUBBLE SORT");
-        Merge instance = new Merge();
+        Bubble instance = new Bubble();
         Integer [] ingresado = {9,3,5,2,1,6,4};
         Comparable[] inputArr = ingresado;
-        instance.mergeSort(inputArr);
+        instance.bubbleSort(inputArr);
         Integer [] esperado = {1,2,3,4,5,6,9};  
          //Si ambas cadenas son iguales, la prueba será exitosa
         assertArrayEquals(ingresado,esperado);

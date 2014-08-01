@@ -28,10 +28,10 @@ public class InsertionTest {
     @Test
     public void testInsertionSort() {
         System.out.println("INSERTION SORT");
-        Merge instance = new Merge();
+        Insertion instance = new Insertion();
         Integer [] ingresado = {10000,23000,49000,56000,48500};
         Comparable[] inputArr = ingresado;
-        instance.mergeSort(inputArr);
+        instance.insertionSort(inputArr);
         Integer [] esperado = {10000,23000,48500,49000,56000};  
          //Si ambas cadenas son iguales, la prueba será exitosa
         assertArrayEquals(ingresado,esperado);

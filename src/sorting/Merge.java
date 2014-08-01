@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  Basado en el codigo publicado en: http://geeksquiz.com/merge-sort/ 
  */
 
 package sorting;
@@ -11,45 +9,69 @@ package sorting;
  */
 public class Merge {
   
-
-	public static void mergeSort(Comparable [ ] a)
+    
+	public  void mergeSort(Comparable [ ] inputArr)
 	{
-		Comparable[] tmp = new Comparable[a.length];
-		mergeSort(a, tmp,  0,  a.length - 1);
+                //se crea un array temporal del tamaño del ingresado
+		Comparable[] array_temporal = new Comparable[inputArr.length];
+                //se llama al constructor para iniciar la comparacion
+		mergeSort(inputArr, array_temporal,  0,  inputArr.length - 1);
+                
+                System.out.println("El resultado ordenado (Merge) es");
+                for (int x = 0; x < inputArr.length-1; x++){
+                    System.out.println(inputArr[x]);
+                }
+  
 	}
 
-	private static void mergeSort(Comparable [ ] a, Comparable [ ] tmp, int left, int right)
+	private static void mergeSort(Comparable [ ] a, Comparable [ ] array_temporal, int izquierda, int derecha)
 	{
-		if( left < right )
+                //si todavia existen datos para comparar 
+		if( izquierda < derecha )
 		{
-			int center = (left + right) / 2;
-			mergeSort(a, tmp, left, center);
-			mergeSort(a, tmp, center + 1, right);
-			merge(a, tmp, left, center + 1, right);
+                        //se obtienen el varlo central
+			int central = (izquierda + derecha) / 2;
+                        
+                        //se divide el array en primera mitad
+			mergeSort(a, array_temporal, izquierda, central);
+                        
+                        //se divide el array en segudna mitad
+			mergeSort(a, array_temporal, central + 1, derecha);
+                        
+                        //
+			merge(a, array_temporal, izquierda, central + 1, derecha);
 		}
 	}
 
 
-    private static void merge(Comparable[ ] a, Comparable[ ] tmp, int left, int right, int rightEnd )
+    private static void merge(Comparable[ ] a, Comparable[ ] array_temporal, int izquierda, int derecha, int derechaFinal )
     {
-        int leftEnd = right - 1;
-        int k = left;
-        int num = rightEnd - left + 1;
+        //variable para obtener la ultima izquierda a comparar
+        int izquierdaFinal = derecha - 1;
+        //izquierda actual
+        int k = izquierda;
+        //valor del tamaño del vector
+        int num = derechaFinal - izquierda + 1;
 
-        while(left <= leftEnd && right <= rightEnd)
-            if(a[left].compareTo(a[right]) <= 0)
-                tmp[k++] = a[left++];
+        //mientras no se haya llegado a los tipes
+        while(izquierda <= izquierdaFinal && derecha <= derechaFinal)
+            //Si izquierda es menor
+            if(a[izquierda].compareTo(a[derecha]) <= 0)
+                array_temporal[k++] = a[izquierda++];
+            //si derecha es mayor
             else
-                tmp[k++] = a[right++];
+                array_temporal[k++] = a[derecha++];
 
-        while(left <= leftEnd)    // Copy rest of first half
-            tmp[k++] = a[left++];
+        //Se copia el resto del vector del lado iquierdo
+        while(izquierda <= izquierdaFinal)    
+            array_temporal[k++] = a[izquierda++];
 
-        while(right <= rightEnd)  // Copy rest of right half
-            tmp[k++] = a[right++];
+        //se copia el resto del vector del lado derecho
+        while(derecha <= derechaFinal) 
+            array_temporal[k++] = a[derecha++];
 
-        // Copy tmp back
-        for(int i = 0; i < num; i++, rightEnd--)
-            a[rightEnd] = tmp[rightEnd];
+        //se copia el vector temporal al vector a
+        for(int i = 0; i < num; i++, derechaFinal--)
+            a[derechaFinal] = array_temporal[derechaFinal];
     }
  }

@@ -23,12 +23,8 @@ import java.util.Random;
 
 public class Sorting {
 
-
     public static void main(String[] args) {
-        
-
-        
-        
+       
         //Cantidad de datos que se desean generar y ordenar
         int cant_numeros = 10;
         File archivo = new File("src/archivo.txt");
@@ -88,5 +84,5 @@ public class Sorting {
         
         Insertion insertion_metod = new Insertion();
         insertion_metod.insertionSort(cordenadas);
-}
+    }
 }    

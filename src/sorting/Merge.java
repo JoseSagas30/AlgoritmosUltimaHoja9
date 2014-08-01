@@ -1,12 +1,13 @@
 /*
+ * Algoritmos y Estructura de Datos
+ * Hoja de trabajo 1
+ *Isa Contreras 13154 / Luis Orellana 13140/ Erick de Mata 13648
+ *Merge.java
  *  Basado en el codigo publicado en: http://geeksquiz.com/merge-sort/ 
- */
+ * Ordenamiento de números que utiliza datos del archivo de texto generado*/
 
-package sorting;
-/**
- *
- * @author Isa
- */
+//package sorting;
+
 public class Merge {
   
     
@@ -16,14 +17,17 @@ public class Merge {
 		Comparable[] array_temporal = new Comparable[inputArr.length];
                 //se llama al constructor para iniciar la comparacion
 		mergeSort(inputArr, array_temporal,  0,  inputArr.length - 1);
-                
+                //Impresión de la lista ordenada
                 System.out.println("El resultado ordenado (Merge) es");
                 for (int x = 0; x < inputArr.length-1; x++){
                     System.out.println(inputArr[x]);
+                    
                 }
-  
+               
+           
 	}
-
+        
+        
 	private static void mergeSort(Comparable [ ] a, Comparable [ ] array_temporal, int izquierda, int derecha)
 	{
                 //si todavia existen datos para comparar 
@@ -74,4 +78,7 @@ public class Merge {
         for(int i = 0; i < num; i++, derechaFinal--)
             a[derechaFinal] = array_temporal[derechaFinal];
     }
+    
+   
+    
  }

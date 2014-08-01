@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package sorting;
-
 /**
- *
- * @author Isa
- */ 
+ * Algoritmos y Estructura de Datos
+ * Hoja de trabajo 1
+  *Isa Contreras 13154 / Luis Orellana 13140/ Erick de Mata 13648
+ * Sorting.java
+ * Clase encargada de generar los números, guardarlos en un archivo de texto, y luego llamar a los 4 tipos de ordenamiento
+*/
+
+//package sorting;
+
+
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -36,7 +35,7 @@ public class Sorting {
             BufferedWriter buffer = new BufferedWriter(escribirArchivo);
             PrintWriter wr = new PrintWriter(buffer);
             
-            int x; //Random 
+            int x; //Random utilizado para 
                 for (int i = 0; i < cant_numeros; i++) {
         	x = (int)(rnd.nextDouble() * 2000.0);
         	System.out.println(x); 
@@ -76,13 +75,13 @@ public class Sorting {
         Merge merge_metod = new Merge();
         merge_metod.mergeSort(cordenadas);
         
-        Bubble bubble_metod = new Bubble();
-        bubble_metod.bubbleSort(cordenadas);
+       Bubble bubble_metod = new Bubble();
+       bubble_metod.bubbleSort(cordenadas);
         
-        Quick quick_metod = new Quick();
-        quick_metod.quickSort(cordenadas);
+       Quick quick_metod = new Quick();
+       quick_metod.quickSort(cordenadas);
         
-        Insertion insertion_metod = new Insertion();
-        insertion_metod.insertionSort(cordenadas);
+       Insertion insertion_metod = new Insertion();
+       insertion_metod.insertionSort(cordenadas);
     }
 }    

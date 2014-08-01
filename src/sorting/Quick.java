@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package sorting;
-
 /**
- *
- * @author Isa
+ * Algoritmos y Estructura de Datos
+ * Hoja de trabajo 1
+ *Isa Contreras 13154 / Luis Orellana 13140/ Erick de Mata 13648
+ * Quick.java
+ * Ordenamiento de números que utiliza datos del archivo de texto generado
  */
+
+//package sorting;
+
+
 public class Quick {
 
     private Comparable array[];

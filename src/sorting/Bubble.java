@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package sorting;
-
 /**
- *
- * @author Isa
- */
+ * Algoritmos y Estructura de Datos
+ * Hoja de trabajo 1
+ * Isa Contreras 13154 / Luis Orellana 13140/ Erick de Mata 13648
+ * Bubble.java
+* Ordenamiento de números que utiliza datos del archivo de texto generado*/
+
+//package sorting;
+
+
 public class Bubble {
     
     
@@ -32,6 +30,7 @@ public class Bubble {
 
         inputArr[position] = (int) key;
       }
+      //Impresión de la lista ordenada
       System.out.println("El resultado ordenado (Bubble) es");
                 for (int x = 0; x < inputArr.length-1; x++){
                     System.out.println(inputArr[x]);

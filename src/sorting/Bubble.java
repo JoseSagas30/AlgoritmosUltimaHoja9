@@ -11,20 +11,30 @@ package sorting;
  * @author Isa
  */
 public class Bubble {
-    public void sort(int[] inputArr) {
+    
+    
+    public void bubbleSort(Comparable[] inputArr) {
+      
+      //Mientras no se hayan recorrido todos los datos
       for (int index = 1; index < inputArr.length; index++)
       {
+        //primera posicion como llave
         Comparable key = inputArr[index];
         int position = index;
 
-        //  Shift larger values to the right
+        //Mientras no sea posicion 0 y key sea menor a la posicion anterior
         while (position > 0 && key.compareTo(inputArr[position-1]) < 0)
         {
+           
            inputArr[position] = inputArr[position-1];
            position--;
         }
 
         inputArr[position] = (int) key;
       }
+      System.out.println("El resultado ordenado (Bubble) es");
+                for (int x = 0; x < inputArr.length-1; x++){
+                    System.out.println(inputArr[x]);
+                }
     }
 }

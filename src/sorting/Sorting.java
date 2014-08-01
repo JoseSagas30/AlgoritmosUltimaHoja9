@@ -23,32 +23,35 @@ import java.util.Random;
 
 public class Sorting {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
         
+
+        
+        
+        //Cantidad de datos que se desean generar y ordenar
+        int cant_numeros = 10;
         File archivo = new File("src/archivo.txt");
         Random rnd = new Random(); 
-        ArrayList cordenadas = new ArrayList();
-        int longitud;
+        Comparable[] cordenadas = new Comparable[cant_numeros];
         //Agrega los numeros random generados al archivo de Texto
         try {
             FileWriter escribirArchivo = new FileWriter(archivo);
             BufferedWriter buffer = new BufferedWriter(escribirArchivo);
             PrintWriter wr = new PrintWriter(buffer);
-            //Random 
-            int x;
-                for (int i = 0; i < 5; i++) {
+            
+            int x; //Random 
+                for (int i = 0; i < cant_numeros; i++) {
         	x = (int)(rnd.nextDouble() * 2000.0);
         	System.out.println(x); 
+                //escritura en el archivo
                 buffer.write(Integer.toString(x));
                 buffer.newLine();
             }
-            
+            //cerrando procesos de escritura del archivo
             wr.close();
             buffer.close();
+            
         }catch (Exception ex) {
         } 
         
@@ -64,21 +67,26 @@ public class Sorting {
                 int contador=0;
                 while((linea=entrada.readLine())!=null){
                     linea = linea.substring(0);
-                    System.out.println("El contenido de la linea es:");
-                    System.out.println(linea);
                     //Agrega los datos leidos al arrayList
-                    cordenadas.add(contador,linea);
-                    System.out.println("El contador es:");
-                    System.out.println(contador);
+                    cordenadas[contador] = (Integer.parseInt(linea));
                     contador = contador + 1; //Incrementa el contador lineas leidas
-                    longitud = cordenadas.size();
-                    System.out.println("La longitud del array es:");
-                    System.out.println(contador);
                 }
             }
             }catch (IOException e) {
             e.printStackTrace();
             }
             
-    }
+        //Metodos de ordenamiento
+        Merge merge_metod = new Merge();
+        merge_metod.mergeSort(cordenadas);
+        
+        Bubble bubble_metod = new Bubble();
+        bubble_metod.bubbleSort(cordenadas);
+        
+        Quick quick_metod = new Quick();
+        quick_metod.quickSort(cordenadas);
+        
+        Insertion insertion_metod = new Insertion();
+        insertion_metod.insertionSort(cordenadas);
+}
 }    

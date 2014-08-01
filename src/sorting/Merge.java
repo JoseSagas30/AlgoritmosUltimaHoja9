@@ -3,7 +3,6 @@
  * Hoja de trabajo 1
  *Isa Contreras 13154 / Luis Orellana 13140/ Erick de Mata 13648
  *Merge.java
- *  Basado en el codigo publicado en: http://geeksquiz.com/merge-sort/ 
  * Ordenamiento de números que utiliza datos del archivo de texto generado*/
 
 //package sorting;
@@ -82,3 +81,7 @@ public class Merge {
    
     
  }
+
+//Bibliografia:
+//Bailey, D. Java Structures, 2007. Septima Edicion. William College
+//En: http://geeksquiz.com/merge-sort/ , [visitado el dia 29/07/2014]

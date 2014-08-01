@@ -77,5 +77,6 @@ public class Quick {
  
 } 
 
-
-//http://www.java2novice.com/java-sorting-algorithms/quick-sort/ 
+//Bibliografia:
+//Bailey, D. Java Structures, 2007. Septima Edicion. William College
+//Java Sorting Algorithms. En: http://www.java2novice.com/java-sorting-algorithms/quick-sort/, [visitado el dia 31/07/2014]

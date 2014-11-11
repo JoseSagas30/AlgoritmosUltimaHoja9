@@ -12,7 +12,7 @@ package Sorting;
  *
  * @author Isa
  */
-public interface GrafoInterface<V,E> {
+public interface Grafos<V,E> {
 
     //Agregar una nueva ciudad
     public void agregarNodo(V nodo);

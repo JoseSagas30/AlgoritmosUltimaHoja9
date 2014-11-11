@@ -13,14 +13,14 @@ import java.util.Vector;
  *
  * @author Isa
  */
-public class MatrizGrafo<V,E> implements GrafoInterface<V,E>{
+public class MatrizGrafo<V,E> implements Grafos<V,E>{
 
     private Vector vertices = new Vector();
     private int[][] nodos= new int [25][25];
     private String matrizRetorno="";
     private String matrizTemporal="";
     
-    
+    //Implementa los mismos metodos que la clase Grafos
     public MatrizGrafo(){
         
         for(int i=0;i<25;i++){

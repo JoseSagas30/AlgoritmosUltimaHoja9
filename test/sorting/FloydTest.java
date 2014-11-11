@@ -5,7 +5,7 @@
 *FloydTest.java
 *Prueba Unitaria de la clase Floyd
 */
-package sorting;
+//package sorting;
 
 import Sorting.Floyd;
 import org.junit.After;

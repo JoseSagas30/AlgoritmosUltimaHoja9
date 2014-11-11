@@ -12,7 +12,7 @@
  * @author Isa
  */
 
-package Sorting;
+//package Sorting;
 import java.io.*;
 
 public class Texto{
@@ -46,6 +46,13 @@ public class Texto{
         return grafo;
     }
     
+    //Escribe en datos.txt
+    public void write(String cadena) throws IOException{
+        fw = new FileWriter(archivo);
+        pw = new PrintWriter(fw);
+        pw.println(cadena);
+    }
+    
     //Utiliza datos q leyo para sacar los pesos (distancia entre ciudades)
     public MatrizGrafo pesos() throws IOException{
         // Lectura del fichero
@@ -61,12 +68,7 @@ public class Texto{
         return grafo;
     }
     
-    //Escribe en datos.txt
-    public void write(String cadena) throws IOException{
-        fw = new FileWriter(archivo);
-        pw = new PrintWriter(fw);
-        pw.println(cadena);
-    }
+    
     
 
 }

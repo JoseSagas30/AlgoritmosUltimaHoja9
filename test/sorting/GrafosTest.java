@@ -6,7 +6,7 @@
 *Pruebas unitarias de la clase Grafos
 */
 
-package sorting;
+//package sorting;
 
 import Sorting.Grafos;
 import org.junit.After;

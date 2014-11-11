@@ -101,7 +101,7 @@ public class Floyd {
                 minimo=num1;
             }
         }
-        centroReturn="Centro grafo: "+matrizAdyacencia.obtenerNodo(centro);
+        centroReturn=""+matrizAdyacencia.obtenerNodo(centro);
         return centroReturn;
        
     }

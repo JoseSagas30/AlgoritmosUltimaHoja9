@@ -4,6 +4,7 @@
 *Jose Sagastume Pinto 13217
 *MatrizGrafo.java
 *Archivo utilizado para poder realizar cambios en la matriz y texto
+*Se utilizo como referencia http://cs.williams.edu/~andrea/cs136/Lectures/Lec29/Lec29.html
 */
 
 package Sorting;

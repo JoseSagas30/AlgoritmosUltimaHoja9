@@ -5,6 +5,7 @@
 *Grafos.java
 *Se utiliza para realizar las operaciones entre los grafos
 *Esta clase se baso en la clase Association de la hoja de trabajo 7 realizada por Erick de Mata, Isa Contreras y Luis Orellana
+*Se utilizo como referencia http://cs.williams.edu/~andrea/cs136/Lectures/Lec29/Lec29.html
 */
 
 package Sorting;

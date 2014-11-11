@@ -13,6 +13,7 @@ package Sorting;
  */
 import java.io.IOException;
 import java.util.*;
+import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
@@ -27,6 +28,7 @@ public class Main {
         matriz.rutaC();
         int opcion, opcion2;
 	String ciudadSal, ciudadDes;
+        Scanner sc = new Scanner(System.in);
         // Menu principal
 	System.out.println("Seleccione una opción: \n1) Ruta mas corta \n2) Centro de grafo \n3) Modificar grafo \n4) Matriz de Adyacencia\n5) Salir del programa");
 	Scanner resp = new Scanner(System.in);
@@ -36,9 +38,9 @@ public class Main {
             if(opcion==1){
                 matriz.rutaC(); 
 		System.out.println("Ciudad de salida: ");
-                ciudadSal = resp.nextLine();
+                ciudadSal = sc.next();
 		System.out.println("Ciudad de destino: ");
-		ciudadDes = resp.nextLine();
+		ciudadDes = sc.next();
                 
                 //Revisa si se encuentra en la matriz de adyacencia
                 if(matriz.matrizAdyacencia.verificar(ciudadSal)&&matriz.matrizAdyacencia.verificar(ciudadDes)){
@@ -69,9 +71,9 @@ public class Main {
 		opcion2 = resp.nextInt(); //opcion2, correspondiente a las opciones para modificar grafo
 		if(opcion2==1){ //Modifica rutas
                     System.out.println("Ciudad de salida: ");
-                    ciudadSal = resp.nextLine();
+                     ciudadSal = sc.next();
                     System.out.println("Ciudad de destino: ");
-                    ciudadDes = resp.nextLine();
+                    ciudadDes = sc.next();
                     //Verifica que se encuentra dentro del grafo
                     if(matriz.matrizAdyacencia.verificar(ciudadSal)&&matriz.matrizAdyacencia.verificar(ciudadDes)) {
                         matriz.matrizAdyacencia.agregarConexion(ciudadSal, ciudadDes, 10000);
@@ -86,9 +88,9 @@ public class Main {
                 //Agrega nuevas rutas
                 else if(opcion2==2){
 			System.out.println("Ciudad de salida: ");
-			ciudadSal = resp.nextLine();
-			System.out.println("Ciudad de destino: ");
-			ciudadDes = resp.nextLine();
+                        ciudadSal = sc.next();
+                        System.out.println("Ciudad de destino: ");
+                        ciudadDes = sc.next();
 			int distancia; //Inicializa variable
                         distancia = 0;
 			System.out.println("Distancia entre ciudades");

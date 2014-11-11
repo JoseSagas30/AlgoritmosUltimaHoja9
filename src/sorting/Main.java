@@ -24,7 +24,7 @@ public class Main {
         
         // Inicializacion de matriz y variables
         Floyd matriz = new Floyd();
-        matriz.caminoCorto();
+        matriz.rutaC();
         int opcion, opcion2;
 	String ciudadSal, ciudadDes;
         // Menu principal
@@ -34,7 +34,7 @@ public class Main {
 		
             //Muestra la ruta mas corta
             if(opcion==1){
-                matriz.caminoCorto(); 
+                matriz.rutaC(); 
 		System.out.println("Ciudad de salida: ");
                 ciudadSal = resp.nextLine();
 		System.out.println("Ciudad de destino: ");
@@ -44,7 +44,7 @@ public class Main {
                 if(matriz.matrizAdyacencia.verificar(ciudadSal)&&matriz.matrizAdyacencia.verificar(ciudadDes)){
                     System.out.println("Distancia de ruta mas corta es: "+matriz.matrizAdyacencia.obtenerConexion(ciudadSal, ciudadDes)+".");
                     if(matriz.matrizAdyacencia.obtenerConexion(ciudadSal, ciudadDes)!=10000){ //El peso en la matriz de adyacencia debe ser diferente a 1000, eso indica que si hay conexion
-                        matriz.mostrarIntermedias(matriz.matrizAdyacencia.obtenerPosicion(ciudadSal), matriz.matrizAdyacencia.obtenerPosicion(ciudadDes));
+                        matriz.predecesores(matriz.matrizAdyacencia.obtenerPosicion(ciudadSal), matriz.matrizAdyacencia.obtenerPosicion(ciudadDes));
 			System.out.println("Predecesores: "+ciudadSal+", "+ciudadDes);
 					}
                 }
@@ -85,14 +85,14 @@ public class Main {
                 }
                 //Agrega nuevas rutas
                 else if(opcion2==2){
-				System.out.println("Ciudad de salida: ");
-				ciudadSal = resp.nextLine();
-				System.out.println("Ciudad de destino: ");
-				ciudadDes = resp.nextLine();
-				int distancia; //Inicializa variable
-                                distancia = 0;
-				System.out.println("Distancia entre ciudades");
-				distancia = resp.nextInt();
+			System.out.println("Ciudad de salida: ");
+			ciudadSal = resp.nextLine();
+			System.out.println("Ciudad de destino: ");
+			ciudadDes = resp.nextLine();
+			int distancia; //Inicializa variable
+                        distancia = 0;
+			System.out.println("Distancia entre ciudades");
+			distancia = resp.nextInt();
 									
                     
                         //Agrega la nueva conexion
@@ -108,7 +108,7 @@ public class Main {
                     }
                 }
                 //Actualiza las rutas
-                matriz.caminoCorto();
+                matriz.rutaC();
                  //Ciclo para regresar al menu princial
                 System.out.println("¿Desea regresar al menú principal?\n **Presione 1 para regresar\n **Presione otro numero para salir del programa");
                 Scanner resp1 = new Scanner(System.in);
@@ -119,7 +119,7 @@ public class Main {
             if(opcion==4){
                 
                 //Muestra matriz de adyacencia creada con Floyd                
-		System.out.println("Matriz de adyacencia");
+		System.out.println("A continuación se muestra la matriz de adyacencia: ");
                 System.out.println(matriz.matrizAdyacencia.mostrarMatrizAdy());
                  //Ciclo para regresar al menu princial
                 System.out.println("¿Desea regresar al menú principal?\n **Presione 1 para regresar\n **Presione otro numero para salir del programa");

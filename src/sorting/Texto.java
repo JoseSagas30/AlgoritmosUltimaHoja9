@@ -15,8 +15,8 @@
 package Sorting;
 import java.io.*;
 
-public class Archivo{
-    
+public class Texto{
+    //Inicializacion
     File archivo;
     FileReader fr;
     BufferedReader br;
@@ -25,18 +25,14 @@ public class Archivo{
     MatrizGrafo grafo = new MatrizGrafo();
 
     
-    /**
-     * obtenerArchivo: Método que obtiene el archivo
-     */
-    public void obtenerArchivo() throws FileNotFoundException{
-       String direccion = new File("src/datos.txt").getAbsolutePath(); 
+    //Lee el archivo datos del proyecto
+    public void datos() throws FileNotFoundException{
+       String direccion = new File("src/ciudades.txt").getAbsolutePath(); 
        archivo=new File(direccion); 
     }  
     
-    /**
-     * arregloNombres: Método que obtiene los nombres de los nodos para el grafo
-     */
-    public MatrizGrafo arregloNombres() throws IOException{
+    //Utiliza los datos que leyo anteiormente para obtener las ciudades
+    public MatrizGrafo ciudades() throws IOException{
         // Lectura del fichero
         fr = new FileReader (archivo);
         br = new BufferedReader(fr);
@@ -50,19 +46,8 @@ public class Archivo{
         return grafo;
     }
     
-    /**
-     * write: Método que escribe en el archivo
-     */
-    public void write(String cadena) throws IOException{
-        fw = new FileWriter(archivo);
-        pw = new PrintWriter(fw);
-        pw.println(cadena);
-    }
-    
-    /**
-     * matrizCostos: Método que obtiene los pesos de los arcos entre nodos del grafo
-     */
-    public MatrizGrafo matrizCostos() throws IOException{
+    //Utiliza datos q leyo para sacar los pesos (distancia entre ciudades)
+    public MatrizGrafo pesos() throws IOException{
         // Lectura del fichero
         fr = new FileReader (archivo);
         br = new BufferedReader(fr);
@@ -74,6 +59,13 @@ public class Archivo{
             grafo.agregarConexion(tmp[0], tmp[1], tmp[2]);
         }
         return grafo;
+    }
+    
+    //Escribe en datos.txt
+    public void write(String cadena) throws IOException{
+        fw = new FileWriter(archivo);
+        pw = new PrintWriter(fw);
+        pw.println(cadena);
     }
     
 
